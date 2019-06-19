@@ -7,11 +7,12 @@
 	* VPC당 4개의 Subnet(Prod 2개 / Priv 2개)
 	* AZ당NAT Gateway(EIP 적용) 1개
 	* Internet Gateway, NAT Gateway에 Subnet을 연결하는 Route Table, Route Table Association
-	* 구성상 VPN, VPG, Transit Gateway를 사용하면 좋으나, 여기서는 구현하지 않습니다.
+	* VPN + VPG + Transit Gateway를 사용하면 관리적 이점이 생기지만, 여기서는 구현하지 않습니다.
 	* 실제 구현은 Prod VPC를 기준으로 하였으며, Bastion은 이중화를 하지 않고 1대만 구성 하였습니다.
 	* EC2 Instance 중 EC2 DB instance가 Prod Private에 구성되어 있으며, Bastion으로만 접근할 수 있게 하였습니다.
 	* Bastion은 EIP를 가지며, ACL과 Security Group으로 제어합니다.
 	* CloudWatch를 통한 vpcflow(VPC Traffic Monitoring)와 Cloudtrail을 통한 Oper-Trace-Log(작업 추적용)를 구성하였으나, 여기서는 넣지 않았습니다. 
+
 
 ## Outputs
 
