@@ -1,6 +1,6 @@
 ## Terraform Test
 
-* 생성되는 리소스
+* 리소스 설명
 	* Dev / Staging / Prod 3개의 VPC로 구성 하였으며, 실제 구현은 Prod VPC만 하였습니다.
 	* Prod Public VPC에서 사용할 Internet Gateway
 	* Prod Private VPC에서 사용할 NACL, Security Group
@@ -12,6 +12,7 @@
 	* EC2 Instance 중 EC2 DB instance가 Prod Private에 구성되어 있으며, Bastion으로만 접근할 수 있게 하였습니다.
 	* Bastion은 EIP를 가지며, ACL과 Security Group으로 제어합니다.
 	* CloudWatch를 통한 vpcflow(VPC Traffic Monitoring)와 Cloudtrail을 통한 Oper-Trace-Log(작업 추적용)를 구성하였으나, 여기서는 넣지 않았습니다. 
+	* 모든 리소스는 폴더별로 구분되어 있지만, 여기서는 한 폴더에서 생성되며 tfstate 파일은 Local로 관리합니다. 
 
 
 ## Outputs
